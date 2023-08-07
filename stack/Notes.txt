@@ -1,0 +1,135 @@
+stack program in c
+-- https://www.scaler.com/topics/stack-in-c/
+
+stack data structure (Youtube)
+-- https://www.geeksforgeeks.org/introduction-to-stack-data-structure-and-algorithm-tutorials/
+-- https://roytuts.com/stack-using-linked-list-in-c-program/
+
+stack problems in c
+-- https://medium.com/techie-delight/stack-data-structure-practice-problems-and-interview-questions-9f08a35a7f19
+-- https://www.geeksforgeeks.org/c-programs-gq/stack-queue-cc-programs-gq/
+-- https://www.stechies.com/stack-in-c/
+-- https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/
+
+prime factorization in c
+-- https://www.tutorialgateway.org/c-program-to-find-prime-factors-of-a-number/
+
+sort stack in c
+https://www.techcrashcourse.com/2016/06/c-check-for-balanced-parentheses-in-expression.html
+
+balanced parentheses c stack
+-- https://prepinsta.com/c-program/program-to-check-the-balance-of-parenthesis/
+
+simplify path in c
+simplify path leetcode
+-- https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/71_simplify_path__medium.html
+-- https://dev.to/seanpgallivan/solution-simplify-path-mk
+
+Write a C program to implement two stacks using a single array.
+-- https://www.sanfoundry.com/c-program-two-stacks-single-array/
+-- https://www.tutorialride.com/c-stack-programs/8-c-programs-and-code-examples-on-stack.htm
+-- https://www.geeksforgeeks.org/c-programs-gq/stack-queue-cc-programs-gq/
+
+prefix infix postfix notation
+-- https://prepinsta.com/data-structures/stack-infix-and-prefix-conversion/
+-- https://prepinsta.com/data-structures/infix-to-postfix-conversion/
+-- baeldung.com/cs/infix-prefix-postfix#:~:text=The%20infix%20notation%20is%20the%20most%20usual%20notation%20for%20writing,based%20algorithms%20and%20programming%20languages.
+-- https://runestone.academy/ns/books/published/pythonds/BasicDS/InfixPrefixandPostfixExpressions.html
+
+infix to postfix using stack
+-- https://www.geeksforgeeks.org/convert-infix-expression-to-postfix-expression/
+-- https://www.programming9.com/programs/c-programs/230-c-program-to-convert-infix-to-postfix-expression-using-stack
+-- https://www.javatpoint.com/c-program-to-convert-infix-to-postfix
+
+infix to postfix program in c for multiple digits
+-- https://www.programmingnotes.org/6949/cpp-simple-multi-digit-decimal-negative-number-infix-to-postfix-conversion-evaluation/
+
+-----------------------------------------------------------
+https://progressivecoder.com/
+https://github.com/aryan-0077
+https://sillycodes.com/check-character-is-alphabet-or-number-or-a-special-character/
+-----------------------------------------------------------
+/*
+Several problems can benefit from using recursion with stacks to handle the recursive structure more efficiently. Here are some examples:
+
+Tree Traversals: Tree traversal algorithms like Preorder, Inorder, and Postorder traversals can be implemented using recursion. However, in some cases, the depth of 
+the tree might be significant, leading to stack overflow errors. Using recursion with an explicit stack can handle larger trees efficiently.
+
+Graph Traversals: Depth-First Search (DFS) and Breadth-First Search (BFS) are commonly implemented using recursion or queue-based approaches. When dealing with deep 
+graphs, recursion with stacks can be a viable alternative to avoid stack overflow issues in recursive DFS.
+
+Expression Evaluation: Converting infix expressions to postfix or prefix notations and evaluating expressions can be implemented recursively. However, large 
+expressions might cause excessive recursion, and using an explicit stack can be more efficient.
+
+Backtracking Algorithms: Problems like N-Queens, Sudoku, and Knight's Tour are often solved using recursive backtracking. Implementing the backtracking with an 
+explicit stack allows you to backtrack efficiently and avoid excessive recursion.
+
+Dynamic Programming (Memoization): Some dynamic programming problems have recursive solutions, but they may involve redundant calculations. By using an explicit stack
+and memoization (storing previously computed results), you can optimize the algorithm's efficiency.
+
+Tower of Hanoi: The famous Tower of Hanoi problem can be solved recursively. Using recursion with stacks allows you to simulate the movements efficiently without 
+relying on the system call stack.
+
+Pathfinding Algorithms: Problems like finding the shortest path in a maze or finding all possible paths in a graph can be implemented using recursion. 
+Implementing recursion with stacks helps avoid stack overflow for larger graphs.
+
+Parentheses Matching: The problem of checking if parentheses are balanced in an expression can be solved using recursion with a stack. Recursive stack-based 
+approaches can handle nested parentheses efficiently.
+
+String Reversal and Palindromes: Some string-related problems can be solved using recursion with a stack. For instance, you can use a stack to reverse a string or 
+check if a string is a palindrome.
+
+Tower of Brahma: The Tower of Brahma problem can be solved recursively. Implementing it with an explicit stack can help you control the movements efficiently without
+relying on the system call stack.
+
+It's important to note that while using recursion with stacks can be useful in these cases, there are often alternative iterative approaches that might be more 
+efficient and easier to implement. Recursive solutions can be more challenging to reason about and may suffer from stack overflow issues for extremely deep recursion. In some scenarios, tail-recursive algorithms or other optimization techniques can make recursive approaches more practical. As with any problem-solving technique, choosing the right approach depends on the specific requirements and constraints of the problem at hand.
+*/
+
+/*
+Dynamic programming is a powerful algorithmic technique used to solve complex problems by breaking them down into smaller overlapping subproblems and efficiently 
+solving each subproblem only once. The technique is particularly useful for optimization problems, where the goal is to find the best solution among a set of 
+possible solutions.
+
+Key characteristics of dynamic programming:
+
+1. **Overlapping Subproblems:** Dynamic programming works best when the problem can be broken down into smaller subproblems, and these subproblems have overlapping sub-subproblems. In other words, the same subproblems are solved multiple times in the process of solving the main problem.
+
+2. **Optimal Substructure:** A problem exhibits optimal substructure if the optimal solution to the main problem can be constructed from the optimal solutions of its subproblems. In other words, the optimal solution to the main problem can be found by combining the optimal solutions of its subproblems.
+
+The basic idea of dynamic programming is to store the solutions to subproblems in a data structure (usually an array or a table) so that they can be reused efficiently when needed. This process is known as memoization or tabulation. Memoization involves caching the results of expensive function calls and reusing them when the same inputs occur again. Tabulation involves filling up a table with the results of subproblems in a bottom-up manner.
+
+There are two main approaches to dynamic programming:
+
+1. **Top-Down Approach (Memoization):** In the top-down approach, the problem is solved recursively, and the solutions to subproblems are memoized (stored) to avoid redundant computations. When a subproblem needs to be solved, the algorithm first checks if the solution is already available in the cache. If it is, the stored result is returned; otherwise, the subproblem is solved recursively, and the result is stored for future use.
+
+2. **Bottom-Up Approach (Tabulation):** In the bottom-up approach, the problem is solved iteratively from the smallest subproblems to the main problem. The solutions to smaller subproblems are stored in a table, and larger subproblems are constructed using the solutions of smaller subproblems until the main problem is solved.
+
+Dynamic programming is used to solve a wide range of problems, including:
+
+- **Fibonacci Sequence**
+- **Coin Change Problem**
+- **Longest Common Subsequence**
+- **Knapsack Problem**
+- **Shortest Path Problems (e.g., Dijkstra's Algorithm)**
+- **Matrix Chain Multiplication**
+- **Edit Distance (String Comparison)**
+
+Dynamic programming can provide significant performance improvements over naive recursive approaches, as it avoids redundant computations by reusing previously computed results. However, it does require careful design and understanding of the problem's substructure. The process of identifying subproblems, defining the recurrence relations, and implementing the memoization or tabulation can be challenging, but the benefits in terms of efficiency can be substantial.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
